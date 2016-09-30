@@ -20,3 +20,8 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 
 timelapse_01.avi
 
 mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=80000000 -vf scale=2592:1944 -o timelapse.avi -mf type=jpeg:fps=24 mf://@list.txt
+
+2592x1944 pixels = ~2.4MB
+
+Autostart crontab
+@reboot python /home/pi/raspiLapseCamAG1.py & 
