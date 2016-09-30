@@ -21,12 +21,15 @@ timelapse_01.avi
 
 mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=80000000 -vf scale=2592:1944 -o timelapse.avi -mf type=jpeg:fps=24 mf://@list.txt
 
+##Image sizes / rates
 2592x1944 pixels = ~2.4MB
-1GB = ~416 images
-5GB = ~2082 images
-10GB = ~4166 images
-6 images / min = 864 MB / hour
-12 images / min = 1728 MB / hour
+###Size / images
+*1GB = ~416 images
+*5GB = ~2082 images
+*10GB = ~4166 images
+###Images / size / time
+*6 images / min = 864 MB / hour
+*12 images / min = 1728 MB / hour
 
 Autostart crontab
 @reboot python /home/pi/raspiLapseCamAG1.py & 
