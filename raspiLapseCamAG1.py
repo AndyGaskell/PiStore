@@ -98,7 +98,7 @@ while True:
         os.system("raspistill -w " + str(imgWidth) + " -h " + str(imgHeight) + " -o " + outputfile +  "  -sh 40 -awb auto -mm average -v")
         
         # copy it to web dir, will over write the previous one
-        shutil.copyfile(outputfile, '/var/www/timelaspe.jpg') 
+        shutil.copyfile(outputfile, '/var/www/html/timelaspe.jpg') 
 
         # Increment the fileSerial
         fileSerial += 1
