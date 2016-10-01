@@ -15,17 +15,18 @@ Autostart crontab
 @reboot python /home/pi/raspiLapseCamAG1.py & 
 
 ##Images to video
-cd /<your_timelapse_folder>
-
-ls *.jpg > list.txt
 
 ###libav-tools
 
 sudo apt-get install libav-tools
 
+cat *.jpg | avconv -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
+
 ###mencoder
 
 sudo apt-get install mencoder
+
+ls *.jpg > list.txt
 
 mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o timelapse.avi -mf type=jpeg:fps=24 mf://@list.txt
 
