@@ -22,6 +22,10 @@ sudo apt-get install libav-tools
 
 cat *.jpg | avconv -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 
+cat *.jpg | avconv -f image2pipe -r 24 -vcodec mjpeg -i - -vcodec libx264 -s 648x468 -b 5000k out5.mp4
+
+cat *.jpg | avconv -f image2pipe -r 24 -vcodec mjpeg -i - -vcodec libx264 -s 1296x972 -b 10M out6.mp4
+
 ###mencoder
 
 sudo apt-get install mencoder
