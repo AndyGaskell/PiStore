@@ -1,8 +1,5 @@
 # PiStore
-Just a personal place to put bits and bobs for Pi
-
-
-
+Just a personal place to put bits and bobs for Pi. More of a personal pi pastebin than anything else.
 
 
 
@@ -21,6 +18,12 @@ Autostart crontab
 cd /<your_timelapse_folder>
 
 ls *.jpg > list.txt
+
+###libav-tools
+
+sudo apt-get install libav-tools
+
+###mencoder
 
 sudo apt-get install mencoder
 
