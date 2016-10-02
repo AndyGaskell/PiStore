@@ -16,7 +16,7 @@ Autostart crontab
 
 ##Images to video
 
-###libav-tools
+###libav-tools / ffmpeg 
 
 sudo apt-get install libav-tools
 
