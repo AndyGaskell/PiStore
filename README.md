@@ -26,6 +26,8 @@ wget https://github.com/ccrisan/motioneye/wiki/precompiled/ffmpeg_3.1.1-1_armhf.
 
 sudo dpkg -i ffmpeg_3.1.1-1_armhf.deb
 
+From https://github.com/ccrisan/motioneye/wiki/Install-On-Raspbian
+
 cat *.jpg | avconv -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 
 cat *.jpg | avconv -f image2pipe -r 24 -vcodec mjpeg -i - -vcodec libx264 -s 648x468 -b 5000k out5.mp4
@@ -57,3 +59,10 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=800
 *6 images / min = 864 MB / hour
 *12 images / min = 1728 MB / hour
 
+#See also...
+* https://github.com/ccrisan/motioneye
+* http://www.fotosyn.com/berrycam-support/
+* http://www.instructables.com/id/Simple-timelapse-camera-using-Raspberry-Pi-and-a-c/?ALLSTEPS
+* https://www.raspberrypi.org/learning/timelapse-setup/
+* https://www.raspberrypi.org/blog/tag/time-lapse/
+* https://www.raspberrypi.org/blog/camera-board-project-time-lapse-video/
