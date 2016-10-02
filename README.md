@@ -52,12 +52,12 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=800
 ##Image sizes / rates
 2592x1944 pixels = ~2.4MB
 ###Size / images
-*1GB = ~416 images
-*5GB = ~2082 images
-*10GB = ~4166 images
+* 1GB = ~416 images
+* 5GB = ~2082 images
+* 10GB = ~4166 images
 ###Images / size / time
-*6 images / min = 864 MB / hour
-*12 images / min = 1728 MB / hour
+* 6 images / min = 864 MB / hour
+* 12 images / min = 1728 MB / hour
 
 #See also...
 * https://github.com/ccrisan/motioneye
