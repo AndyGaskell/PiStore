@@ -8,21 +8,9 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 
 # Define GPIO pins
-MotorNeg = 27
-MotorPos = 24
-MotorEnable = 5
-
-#MotorNeg = 22
-#MotorPos = 6
-#MotorEnable = 17
-
-#MotorNeg = 16
-#MotorPos = 23
-#MotorEnable = 12
-
-#MotorNeg = 18
-#MotorPos = 13
-#MotorEnable = 25
+MotorNeg = 18
+MotorPos = 13
+MotorEnable = 25
 
 
 # Set up defined GPIO pins
