@@ -1,3 +1,5 @@
+!#/usr/bin/python3
+
 # Import GPIO
 import RPi.GPIO as GPIO
 
