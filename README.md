@@ -68,3 +68,13 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=800
 * https://www.raspberrypi.org/learning/timelapse-setup/
 * https://www.raspberrypi.org/blog/tag/time-lapse/
 * https://www.raspberrypi.org/blog/camera-board-project-time-lapse-video/
+
+
+###Localhost from PiStore
+in...
+/etc/apache2/sites-available000-default.conf
+...set...
+DocumentRoot /home/pi/PiStore.git/trunk
+
+
+
