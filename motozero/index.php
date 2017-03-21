@@ -13,9 +13,11 @@ echo shell_exec("pwd") . "<br/>";
 
 if ( $action == "motor1" ) {
 	echo "spin_motor_1<br/>";
-	#exec("/usr/bin/python3 /home/pi/PiStore.git/trunk/motozero/spin_motor_1.py");
-	shell_exec("/usr/bin/python3 /home/pi/PiStore.git/trunk/motozero/spin_motor_1.py");
-
+	echo shell_exec("bash spin_motor_1.sh");
+}
+if ( $action == "motor2" ) {
+	echo "spin_motor_2<br/>";
+	echo shell_exec("bash spin_motor_2.sh");
 }
 
 
