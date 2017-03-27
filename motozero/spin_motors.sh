@@ -1,12 +1,15 @@
 #!/bin/bash
 
-
+#pwd
+#cd "$( dirname "${BASH_SOURCE[0]}" )"
+#pwd
 
 motor1=$1
 motor2=$2
 motor3=$3
 motor4=$4
 time=$5
+photo=$6
 
 
 if [ $motor1 != "0" ]; then
@@ -71,3 +74,8 @@ if [ $motor2 != "0" ]; then
 	echo "motor2 stop"
 	gpio -g write 17 0
 fi
+
+if [ $photo != "0" ]; then
+	raspistill -o camera_still.jpg -n -w 640 -h 480
+fi
+
