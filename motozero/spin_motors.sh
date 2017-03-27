@@ -51,8 +51,8 @@ if [ $motor1 != "0" ]; then
 fi
 
 
-if [ $motor2 = "1" ]; then
-	# motor 2
+if [ $motor2 != "0" ]; then
+	echo "motor2 go"
 	gpio -g write 17 1
 fi
 
@@ -67,7 +67,7 @@ if [ $motor1 != "0" ]; then
 fi
 
 
-if [ $motor2 = "1" ]; then
-	# motor 2
+if [ $motor2 != "0" ]; then
+	echo "motor2 stop"
 	gpio -g write 17 0
 fi
