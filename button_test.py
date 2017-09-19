@@ -1,6 +1,6 @@
 #
 # http://razzpisampler.oreilly.com/ch07.html
-# button plugged into the 3rd and 5th
+# button plugged into the 3rd and 5th pins from the corner
 #
 
 import RPi.GPIO as GPIO
