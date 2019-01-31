@@ -9,7 +9,8 @@ sensor = MotionSensor(14)
 camera = PiCamera()
 
 print("Waiting for sensor to settle")
-sensor.wait_for_no_motion() print("Ready")
+sensor.wait_for_no_motion() 
+print("Ready")
 
 while True:
     sensor.wait_for_motion()
