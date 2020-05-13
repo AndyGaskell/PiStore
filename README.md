@@ -3,7 +3,7 @@ Just a personal place to put bits and bobs for Pi. More of a personal pi pastebi
 
 
 
-##Timelapse
+## Timelapse
 http://www.fotosyn.com/berrycam-support/
 
 sudo python /home/pi/berryCam.py
@@ -14,9 +14,9 @@ Autostart crontab
 
 @reboot python /home/pi/raspiLapseCamAG1.py & 
 
-##Images to video
+## Images to video
 
-###libav-tools / ffmpeg 
+### libav-tools / ffmpeg 
 
 sudo apt-get install libav-tools
 
@@ -38,7 +38,7 @@ cat *.jpg | ffmpeg -f image2pipe -r 24 -vcodec mjpeg -i - -vcodec libx264 -s 129
 
 cat *.jpg | ffmpeg -f image2pipe -r 24 -vcodec mjpeg -i - -vcodec libx264 -s 1296x972 -b:v 20M out8f.mp4
 
-###mencoder
+### mencoder
 
 sudo apt-get install mencoder
 
@@ -51,17 +51,17 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 
 mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=80000000 -vf scale=2592:1944 -o timelapse.avi -mf type=jpeg:fps=24 mf://@list.txt
 
 
-##Image sizes / rates
+## Image sizes / rates
 2592x1944 pixels = ~2.4MB
-###Size / images
+### Size / images
 * 1GB = ~416 images
 * 5GB = ~2082 images
 * 10GB = ~4166 images
-###Images / size / time
+### Images / size / time
 * 6 images / min = 864 MB / hour
 * 12 images / min = 1728 MB / hour
 
-#See also...
+See also...
 * https://github.com/ccrisan/motioneye
 * http://www.fotosyn.com/berrycam-support/
 * http://www.instructables.com/id/Simple-timelapse-camera-using-Raspberry-Pi-and-a-c/?ALLSTEPS
@@ -70,11 +70,13 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=2592/1944:vbitrate=800
 * https://www.raspberrypi.org/blog/camera-board-project-time-lapse-video/
 
 
-###Localhost from PiStore
+### Localhost from PiStore
 in...
 /etc/apache2/sites-available000-default.conf
 ...set...
 DocumentRoot /home/pi/PiStore.git/trunk
 
+## DD
 
+sudo dd bs=4M if=retropie-buster-4.6-rpi4.img of=/dev/sdc conv=fsync
 
