@@ -80,3 +80,69 @@ DocumentRoot /home/pi/PiStore.git/trunk
 
 sudo dd bs=4M if=retropie-buster-4.6-rpi4.img of=/dev/sdc conv=fsync
 
+## Nature Cam
+
+* https://mynaturewatch.net
+* https://mynaturewatch.net/forum?p=post%2Fconnect-to-home-network-9770732%3Fhighlight%3Dnetwork%26trail%3D30
+* https://raspberrypi.stackexchange.com/questions/13764/what-causes-enospc-error-when-using-the-raspberry-pi-camera-module
+* Camera, ID: 1051437, https://www.banggood.com/Camera-Module-For-Raspberry-Pi-4-Model-B-3-Model-B-2B-B-A-p-1051437.html
+
+pi / badgersandfoxes
+
+Chang to use home network steps were...
+
+You will need to be able access the raspi with either keyboard and screen or, I used ssh, ethernet over usb
+
+REMOVE HOTSPOT AND USE HOME NETWORK
+
+```
+sudo apt-get purge dns-root-data
+sudo systemctl disable hostapd
+sudo systemctl disable dnsmasq
+reboot
+sudo apt remove dnsmasq
+sudo apt remove hostapd
+```
+
+EDIT /etc/dhcpcd.conf to remove/comment static wlan and nohook wpa_supplicant lines
+
+```
+diff dhcpd.conf_before.txt dhcpd.conf_after.txt 
+59c59,60
+< nohook wpa_supplicant
+---
+> # commented out by AG
+> #nohook wpa_supplicant
+61,62c62,65
+< static ip_address=192.168.50.10/24
+< static routers=192.168.50.1
+---
+> # commented out by AG
+> #static ip_address=192.168.50.10/24
+> # commented out by AG
+> #static routers=192.168.50.1
+```
+
+ADD your home network to /etc/wpa_supplicant/wpa_supplicant.conf...
+
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=GB
+network={
+    ssid="WIFI_NAME"
+    psk="WIFI_PASSWORD"
+    key_mgmt=WPA-PSK
+}
+```
+
+RECONFIGURE WLAN
+wpa_cli -i wlan0 reconfigure
+
+reboot
+
+DEBUGGING
+sudo iwlist wlan0 scan 
+ifconfig 
+
+
