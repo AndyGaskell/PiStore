@@ -145,4 +145,10 @@ DEBUGGING
 sudo iwlist wlan0 scan 
 ifconfig 
 
+## raspistill to test camera
+
+https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md
+
+```raspistill -o cam.jpg```
+
 
